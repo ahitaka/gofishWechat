@@ -15,10 +15,16 @@
 }
 
 .avatar-btn {
+  align-items: center;
   background: none;
   border: none;
-  padding: 0;
+  display: flex;
+  font-size: 0;
+  justify-content: center;
   line-height: 1;
+  margin: 0;
+  padding: 0;
+  width: auto;
 }
 
 .avatar-btn::after {
