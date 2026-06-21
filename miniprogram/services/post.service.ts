@@ -1,6 +1,6 @@
 import type { CommunityPost, PostComment } from "../models/index";
 import { mockPosts } from "../mock/index";
-import { request } from "./request";
+import { request, requestQuiet } from "./request";
 
 /** 后端分页响应 */
 interface PageResponse<T> {
@@ -180,11 +180,11 @@ export function createPost(form: Record<string, unknown>): Promise<CommunityPost
 }
 
 export function likePost(id: string, liked: boolean): Promise<boolean> {
-  return request<boolean>(`/posts/${id}/like`, liked ? "DELETE" : "PUT");
+  return requestQuiet<boolean>(`/posts/${id}/like`, liked ? "DELETE" : "PUT");
 }
 
 export function sharePost(id: string): Promise<void> {
-  return request<void>(`/posts/${id}/share`, "POST");
+  return requestQuiet<void>(`/posts/${id}/share`, "POST");
 }
 
 export async function getPostComments(postId: string): Promise<PostComment[]> {
