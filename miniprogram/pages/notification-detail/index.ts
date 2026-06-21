@@ -38,7 +38,11 @@ Page({
   },
   onLoad(options: Record<string, string>) {
     const type = options.type || "";
-    const title = options.title || "消息";
+    const rawTitle = options.title || "消息";
+    let title = rawTitle;
+    try {
+      title = decodeURIComponent(rawTitle);
+    } catch {}
     this.setData({ type, title });
     this.loadNotifications();
   },
