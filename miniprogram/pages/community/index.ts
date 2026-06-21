@@ -16,6 +16,7 @@ Page({
     spotFilter: null as { spotId: string; spotName: string } | null,
     posts: [] as CommunityPost[],
     currentUserId: "",
+    shareTarget: null as CommunityPost | null,
   },
   onLoad() {
     const userInfo = wx.getStorageSync("userInfo") || {};
@@ -138,6 +139,8 @@ Page({
   },
   async sharePost(event: CustomEvent<{ post: CommunityPost }>) {
     const target = event.detail.post;
+    // 记录当前分享的帖子，供 onShareAppMessage 使用
+    this.setData({ shareTarget: target });
     try {
       await sharePost(target.id);
       this.setData({
@@ -158,9 +161,31 @@ Page({
     }
   },
   onShareAppMessage() {
+    const target = this.data.shareTarget;
+    if (target) {
+      return {
+        title: target.content?.substring(0, 30) || `${target.author.nickname}的分享`,
+        path: `/pages/post-detail/index?id=${target.id}`,
+        imageUrl: target.images?.[0] || "",
+      };
+    }
     return {
       title: "看看钓友们的新鱼获",
       path: TAB_COMMUNITY,
+    };
+  },
+  onShareTimeline() {
+    const target = this.data.shareTarget;
+    if (target) {
+      return {
+        title: target.content?.substring(0, 30) || `${target.author.nickname}的分享`,
+        query: `id=${target.id}`,
+        imageUrl: target.images?.[0] || "",
+      };
+    }
+    return {
+      title: "看看钓友们的新鱼获",
+      query: "",
     };
   },
 });
