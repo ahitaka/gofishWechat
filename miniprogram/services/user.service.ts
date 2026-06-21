@@ -56,6 +56,7 @@ export async function getUserFollowing(userId: string): Promise<UserProfile[]> {
 export async function updateMyProfile(data: {
   nickname?: string;
   avatarUrl?: string;
+  coverUrl?: string;
 }): Promise<UserProfile> {
   return toUser(await request<UserApiItem>("/users/me", "PATCH", data));
 }

@@ -6,6 +6,33 @@
   margin: 0 -32rpx;
 }
 
+.banner {
+  margin: 0 -32rpx;
+  height: 320rpx;
+  overflow: hidden;
+  background: linear-gradient(135deg, #21B56B 0%, #0d8a4a 40%, #1565C0 100%);
+  position: relative;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20rpx,
+    rgba(255,255,255,0.3) 20rpx,
+    rgba(255,255,255,0.3) 22rpx
+  );
+}
+
+.banner image {
+  width: 100%;
+  height: 100%;
+}
+
 .profile-card {
   align-items: center;
   display: flex;

@@ -61,6 +61,7 @@ export interface UserProfile {
   id: string;
   nickname: string;
   avatarUrl?: string;
+  coverUrl?: string;
   bio?: string;
   level: number;
   followerCount: number;

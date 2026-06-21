@@ -7,6 +7,8 @@ Page({
     nickname: "",
     avatarUrl: "",
     avatarTempPath: "",
+    coverUrl: "",
+    coverTempPath: "",
     submitting: false,
   },
   onLoad() {
@@ -14,6 +16,7 @@ Page({
     this.setData({
       nickname: userInfo.nickname || "",
       avatarUrl: userInfo.avatarUrl || "/images/avatar.png",
+      coverUrl: userInfo.coverUrl || "",
     });
   },
   chooseAvatar(event: CustomEvent<{ avatarUrl: string }>) {
@@ -21,6 +24,16 @@ Page({
     if (avatarUrl) {
       this.setData({ avatarUrl, avatarTempPath: avatarUrl });
     }
+  },
+  chooseCover() {
+    wx.chooseMedia({
+      count: 1,
+      mediaType: ["image"],
+      success: (res: WechatMiniprogram.ChooseMediaSuccessCallbackResult) => {
+        const tempPath = res.tempFiles[0].tempFilePath;
+        this.setData({ coverUrl: tempPath, coverTempPath: tempPath });
+      },
+    });
   },
   setNickname(event: WechatMiniprogram.Input) {
     this.setData({ nickname: event.detail.value });
@@ -37,7 +50,11 @@ Page({
       if (this.data.avatarTempPath) {
         avatarUrl = await uploadImage(this.data.avatarTempPath);
       }
-      const userInfo = await updateMyProfile({ nickname, avatarUrl });
+      let coverUrl = this.data.coverUrl;
+      if (this.data.coverTempPath) {
+        coverUrl = await uploadImage(this.data.coverTempPath);
+      }
+      const userInfo = await updateMyProfile({ nickname, avatarUrl, coverUrl });
       wx.setStorageSync("userInfo", userInfo);
       wx.showToast({ title: "已保存" });
       setTimeout(() => wx.navigateBack(), 500);

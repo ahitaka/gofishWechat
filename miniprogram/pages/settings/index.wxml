@@ -7,6 +7,11 @@
       <user-avatar src="{{avatarUrl || '/images/avatar.png'}}"></user-avatar>
       <text>修改头像</text>
     </button>
+    <view class="cover-picker" bindtap="chooseCover">
+      <image wx:if="{{coverUrl}}" class="cover-preview" src="{{coverUrl}}" mode="aspectFill"></image>
+      <view wx:else class="cover-placeholder">封</view>
+      <text>修改个人主页封面</text>
+    </view>
     <view class="field">
       <text>昵称</text>
       <input type="nickname" value="{{nickname}}" maxlength="32" placeholder="请输入昵称" bindinput="setNickname" />
