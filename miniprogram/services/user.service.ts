@@ -6,6 +6,7 @@ interface UserApiItem {
   id: number | string;
   nickname?: string;
   avatarUrl?: string;
+  coverUrl?: string;
   bio?: string;
   level?: number;
   followerCount?: number;
@@ -30,6 +31,7 @@ function toUser(item: UserApiItem): UserProfile {
     id: String(item.id),
     nickname: item.nickname || "钓友",
     avatarUrl: item.avatarUrl || "/images/avatar.png",
+    coverUrl: item.coverUrl || "",
     bio: item.bio || "",
     level: item.level || 1,
     followerCount: item.followerCount || 0,
