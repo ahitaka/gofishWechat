@@ -125,9 +125,18 @@
   padding-top: 20rpx;
 }
 
-.actions button {
+.action {
   color: #777777;
   font-size: 26rpx;
+  background: none;
+  padding: 0;
+  line-height: 1;
+  border: none;
+  display: inline;
+}
+
+.action::after {
+  border: none;
 }
 
 .actions .liked {
