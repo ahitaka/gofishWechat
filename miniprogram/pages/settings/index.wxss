@@ -33,33 +33,10 @@
 .cover-picker {
   align-items: center;
   border-bottom: 1rpx solid #EEEEEE;
-  display: flex;
-  gap: 22rpx;
-  min-height: 132rpx;
-}
-
-.cover-preview {
-  border-radius: 12rpx;
-  height: 100rpx;
-  width: 160rpx;
-}
-
-.cover-placeholder {
-  align-items: center;
-  background: linear-gradient(135deg, #21B56B, #1565C0);
-  border-radius: 12rpx;
-  color: #FFFFFF;
-  display: flex;
-  font-size: 36rpx;
-  font-weight: 600;
-  height: 100rpx;
-  justify-content: center;
-  width: 160rpx;
-}
-
-.cover-picker text {
   color: #222222;
+  display: flex;
   font-size: 30rpx;
+  min-height: 108rpx;
 }
 
 .field {
