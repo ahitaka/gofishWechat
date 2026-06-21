@@ -3,9 +3,16 @@ Component({
     post: Object,
     currentUserId: String,
   },
+  data: {
+    liking: false,
+  },
   methods: {
     toggleLike() {
+      this.setData({ liking: true });
       this.triggerEvent("like", { post: this.data.post });
+      setTimeout(() => {
+        this.setData({ liking: false });
+      }, 220);
     },
     toggleFollow() {
       if (String(this.data.post?.author?.id || "") === String(this.data.currentUserId || "")) {
