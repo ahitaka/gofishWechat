@@ -125,4 +125,31 @@ Page({
       wx.navigateTo({ url: toSpotDetail(spotId) });
     }
   },
+  onShareAppMessage() {
+    const post = this.data.post;
+    if (!post) return { title: "GoFish" };
+    // 异步更新分享计数
+    sharePost(post.id)
+      .then(() => {
+        const p = this.data.post;
+        if (p) {
+          this.setData({ post: { ...p, shareCount: p.shareCount + 1 } });
+        }
+      })
+      .catch(() => {});
+    return {
+      title: post.content?.substring(0, 30) || `${post.author.nickname}的分享`,
+      path: `/pages/post-detail/index?id=${post.id}`,
+      imageUrl: post.images?.[0] || "",
+    };
+  },
+  onShareTimeline() {
+    const post = this.data.post;
+    if (!post) return { title: "GoFish" };
+    return {
+      title: post.content?.substring(0, 30) || `${post.author.nickname}的分享`,
+      query: `id=${post.id}`,
+      imageUrl: post.images?.[0] || "",
+    };
+  },
 });
