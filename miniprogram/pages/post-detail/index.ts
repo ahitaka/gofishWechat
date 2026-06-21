@@ -9,7 +9,7 @@ import {
 } from "../../services/post.service";
 import { followUser, unfollowUser } from "../../services/follow.service";
 import { ensureLogin } from "../../services/auth.service";
-import { toSpotDetail } from "../../constants/routes";
+import { toSpotDetail, toUserProfile } from "../../constants/routes";
 import { recordView } from "../../services/history.service";
 
 Page({
@@ -136,6 +136,12 @@ Page({
     const spotId = event.detail.post.spot?.id;
     if (spotId) {
       wx.navigateTo({ url: toSpotDetail(spotId) });
+    }
+  },
+  openUser(event: CustomEvent<{ userId: string }>) {
+    const userId = event.detail.userId;
+    if (userId) {
+      wx.navigateTo({ url: toUserProfile(userId) });
     }
   },
   onShareAppMessage() {

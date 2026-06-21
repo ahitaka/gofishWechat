@@ -38,5 +38,8 @@ Component({
     openCard() {
       this.triggerEvent("opencard", { post: this.data.post });
     },
+    goToUser() {
+      this.triggerEvent("user", { userId: this.data.post?.author?.id });
+    },
   },
 });

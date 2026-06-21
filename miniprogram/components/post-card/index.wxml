@@ -1,5 +1,5 @@
 <view class="post-card">
-  <view class="author">
+  <view class="author" catchtap="goToUser">
     <user-avatar src="{{post.author.avatarUrl}}"></user-avatar>
     <view class="author-main">
       <view class="name-row">

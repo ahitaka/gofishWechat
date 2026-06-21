@@ -1,4 +1,4 @@
-import { TAB_COMMUNITY, toPostDetail, toSpotDetail } from "../../constants/routes";
+import { TAB_COMMUNITY, toPostDetail, toSpotDetail, toUserProfile } from "../../constants/routes";
 import type { CommunityPost } from "../../models/index";
 import type { CustomEvent } from "../../utils/events";
 import { getPosts, likePost, sharePost } from "../../services/post.service";
@@ -166,6 +166,12 @@ Page({
       wx.navigateTo({
         url: toSpotDetail(spotId),
       });
+    }
+  },
+  openUser(event: CustomEvent<{ userId: string }>) {
+    const userId = event.detail.userId;
+    if (userId) {
+      wx.navigateTo({ url: toUserProfile(userId) });
     }
   },
   onShareAppMessage() {
