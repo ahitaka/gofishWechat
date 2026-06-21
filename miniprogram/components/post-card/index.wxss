@@ -132,7 +132,8 @@
   padding: 0;
   line-height: 1;
   border: none;
-  display: inline;
+  flex: 1;
+  text-align: center;
 }
 
 .action::after {
