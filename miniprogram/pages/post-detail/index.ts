@@ -8,6 +8,7 @@ import {
   sharePost,
 } from "../../services/post.service";
 import { followUser, unfollowUser } from "../../services/follow.service";
+import { ensureLogin } from "../../services/auth.service";
 import { toSpotDetail } from "../../constants/routes";
 import { recordView } from "../../services/history.service";
 
@@ -36,6 +37,7 @@ Page({
     }
   },
   async toggleLike() {
+    if (!(await ensureLogin())) return;
     const post = this.data.post;
     if (!post) return;
     // 乐观更新：立即响应 UI
@@ -64,6 +66,7 @@ Page({
     }
   },
   async toggleFollow() {
+    if (!(await ensureLogin())) return;
     const post = this.data.post;
     if (!post) {
       return;
@@ -94,6 +97,7 @@ Page({
     });
   },
   async sharePost() {
+    if (!(await ensureLogin())) return;
     const post = this.data.post;
     if (!post) return;
     try {
@@ -107,6 +111,7 @@ Page({
     this.setData({ commentText: event.detail.value });
   },
   async submitComment() {
+    if (!(await ensureLogin())) return;
     const post = this.data.post;
     const content = this.data.commentText.trim();
     if (!post || !content) {

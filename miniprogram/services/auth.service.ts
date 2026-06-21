@@ -64,3 +64,14 @@ export function getWechatProfile(): Promise<WechatProfile> {
 export function isLoggedIn(): boolean {
   return !!wx.getStorageSync("accessToken") && !wx.getStorageSync("needProfile");
 }
+
+export async function ensureLogin(): Promise<boolean> {
+  if (isLoggedIn()) return true;
+  try {
+    await login();
+    return true;
+  } catch {
+    wx.showToast({ title: "请先登录", icon: "none" });
+    return false;
+  }
+}

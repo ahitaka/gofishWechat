@@ -3,6 +3,7 @@ import type { CommunityPost } from "../../models/index";
 import type { CustomEvent } from "../../utils/events";
 import { getPosts, likePost, sharePost } from "../../services/post.service";
 import { followUser, unfollowUser } from "../../services/follow.service";
+import { ensureLogin } from "../../services/auth.service";
 
 Page({
   data: {
@@ -76,6 +77,7 @@ Page({
     this.setData({ spotFilter: null, page: 1 }, () => this.loadPosts());
   },
   async toggleLike(event: CustomEvent<{ post: CommunityPost }>) {
+    if (!(await ensureLogin())) return;
     const target = event.detail.post;
     // 乐观更新：立即响应 UI
     const liked = !target.liked;
@@ -103,6 +105,7 @@ Page({
     }
   },
   async toggleFollow(event: CustomEvent<{ post: CommunityPost }>) {
+    if (!(await ensureLogin())) return;
     const target = event.detail.post;
     if (String(target.author.id) === String(this.data.currentUserId)) {
       return;
@@ -142,6 +145,7 @@ Page({
     });
   },
   async sharePost(event: CustomEvent<{ post: CommunityPost }>) {
+    if (!(await ensureLogin())) return;
     const target = event.detail.post;
     // 记录当前分享的帖子，供 onShareAppMessage 使用
     this.setData({ shareTarget: target });
