@@ -1,0 +1,91 @@
+.login-page {
+  background: #F7F8FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 64rpx 40rpx;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.brand {
+  align-items: center;
+  display: flex;
+  gap: 22rpx;
+  margin-bottom: 40rpx;
+}
+
+.logo {
+  border-radius: 20rpx;
+  height: 112rpx;
+  width: 112rpx;
+}
+
+.title {
+  color: #222222;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+
+.desc {
+  color: #777777;
+  font-size: 26rpx;
+  margin-top: 8rpx;
+}
+
+.auth-card {
+  padding: 0 28rpx;
+  width: 100%;
+}
+
+.avatar-row,
+.field {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  min-height: 116rpx;
+}
+
+.avatar-row {
+  background: #FFFFFF;
+  border-bottom: 1rpx solid #EEEEEE;
+  border-radius: 0;
+  color: #222222;
+  font-size: 30rpx;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 72rpx;
+  width: 72rpx;
+}
+
+.field text {
+  color: #222222;
+  font-size: 30rpx;
+  width: 96rpx;
+}
+
+.field input {
+  flex: 1;
+  font-size: 30rpx;
+  text-align: right;
+}
+
+.login-btn {
+  margin-top: 32rpx;
+  width: 100%;
+}
+
+.tip {
+  color: #AAAAAA;
+  font-size: 24rpx;
+  line-height: 1.6;
+  margin-top: 24rpx;
+  text-align: center;
+}

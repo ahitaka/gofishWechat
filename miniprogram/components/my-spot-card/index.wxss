@@ -1,0 +1,59 @@
+.card-wrap {
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
+  display: flex;
+  gap: 20rpx;
+  padding: 20rpx;
+}
+
+.cover {
+  background: #EAF8F0;
+  border-radius: 18rpx;
+  height: 168rpx;
+  width: 168rpx;
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  color: #222222;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.address,
+.time,
+.reject {
+  color: #777777;
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+
+.reject {
+  color: #E5484D;
+}
+
+.tags,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  margin-top: 12rpx;
+}
+
+.actions button {
+  background: #F7F8FA;
+  border-radius: 12rpx;
+  color: #555555;
+  font-size: 24rpx;
+  padding: 8rpx 16rpx;
+}
+
+.actions .primary {
+  background: #EAF8F0;
+  color: #21B56B;
+}

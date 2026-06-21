@@ -1,0 +1,41 @@
+<view class="page publish-page">
+  <view class="nav">
+    <view class="nav-title">发布</view>
+  </view>
+  <view class="type-tabs">
+    <view wx:for="{{types}}" wx:key="value" class="type {{form.type === item.value ? 'active' : ''}}" data-value="{{item.value}}" bindtap="changeType">{{item.label}}</view>
+  </view>
+  <view class="form card">
+    <textarea value="{{form.content}}" maxlength="300" placeholder="分享今天的鱼获、钓点或心得..." bindinput="onContentInput"></textarea>
+    <view class="images">
+      <cached-image wx:for="{{form.images}}" wx:key="*this" src="{{item}}" custom-class="image" mode="aspectFill"></cached-image>
+      <button class="add-image" bindtap="chooseImages" wx:if="{{form.images.length < 9}}">+</button>
+    </view>
+  </view>
+  <view class="form card">
+    <view class="spot-picker">
+      <view class="row">
+        <text>钓点</text>
+        <text class="value">{{selectedSpotName || '必选'}}</text>
+      </view>
+      <input value="{{spotKeyword}}" placeholder="搜索并选择钓点" bindinput="onSpotKeywordInput" />
+      <scroll-view class="spot-results" scroll-y>
+        <view wx:for="{{filteredSpots}}" wx:key="id" data-index="{{index}}" class="spot-option {{item.id === form.spotId ? 'selected' : ''}}" bindtap="chooseSpot">
+          <text>{{item.name}}</text>
+          <text>{{item.address || '暂无位置'}}</text>
+        </view>
+        <view wx:if="{{!filteredSpots.length}}" class="empty">没有匹配钓点</view>
+      </scroll-view>
+    </view>
+    <input value="{{fishText}}" placeholder="鱼种，如 鲫鱼、鲤鱼" bindinput="onFishInput" />
+    <input value="{{weightText}}" placeholder="重量 kg" type="digit" bindinput="onWeightInput" />
+    <input value="{{lengthText}}" placeholder="长度 cm" type="digit" bindinput="onLengthInput" />
+    <input value="{{baitText}}" placeholder="装备与饵料" bindinput="onBaitInput" />
+    <input value="{{tagsText}}" placeholder="标签，用空格分隔" bindinput="onTagsInput" />
+  </view>
+  <view class="visibility">
+    <view wx:for="{{visibilityOptions}}" wx:key="value" class="{{form.visibility === item.value ? 'active' : ''}}" data-value="{{item.value}}" bindtap="changeVisibility">{{item.label}}</view>
+  </view>
+  <button class="primary-btn submit" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submit">{{submitting ? '发布中' : '发布'}}</button>
+  <fish-loading></fish-loading>
+</view>

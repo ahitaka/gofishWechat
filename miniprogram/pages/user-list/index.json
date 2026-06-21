@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "user-avatar": "/components/user-avatar/index",
+    "empty-state": "/components/empty-state/index",
+    "bottom-nav": "/components/bottom-nav/index"
+  },
+  "enablePullDownRefresh": true
+}

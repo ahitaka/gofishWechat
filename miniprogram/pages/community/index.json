@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "post-card": "/components/post-card/index",
+    "empty-state": "/components/empty-state/index"
+  },
+  "enablePullDownRefresh": true
+}

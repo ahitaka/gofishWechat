@@ -1,0 +1,73 @@
+page {
+  --color-primary: #21B56B;
+  --color-primary-light: #EAF8F0;
+  --color-blue: #2F80ED;
+  --color-text-main: #222222;
+  --color-text-secondary: #777777;
+  --color-border: #EEEEEE;
+  --color-background: #F7F8FA;
+  --color-white: #FFFFFF;
+  --color-warning: #F5A623;
+  background: #F7F8FA;
+  color: #222222;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 28rpx;
+}
+
+view,
+text,
+image,
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+}
+
+button::after {
+  border: 0;
+}
+
+.page {
+  min-height: 100vh;
+  padding-bottom: 156rpx;
+}
+
+.nav {
+  padding: 96rpx 32rpx 20rpx;
+  background: #F7F8FA;
+}
+
+.nav-title {
+  color: #222222;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+
+.card {
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
+}
+
+.primary-btn {
+  align-items: center;
+  background: #21B56B;
+  border-radius: 16rpx;
+  color: #FFFFFF;
+  display: flex;
+  font-size: 28rpx;
+  font-weight: 500;
+  justify-content: center;
+  min-height: 88rpx;
+}
+
+.muted {
+  color: #777777;
+}

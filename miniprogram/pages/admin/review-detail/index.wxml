@@ -1,0 +1,25 @@
+<view class="page review-detail-page" wx:if="{{detail}}">
+  <view class="nav">
+    <view class="nav-title">审核详情</view>
+  </view>
+  <view class="card main">
+    <view class="title">{{detail.spotName}}</view>
+    <view class="tags">
+      <spot-operation-tag value="{{detail.operationType}}"></spot-operation-tag>
+      <review-status-tag value="{{detail.reviewStatus}}"></review-status-tag>
+    </view>
+    <view class="meta">申请人：{{detail.submitter.nickname}}</view>
+    <view class="meta">申请时间：{{detail.submittedAt}}</view>
+    <view class="meta" wx:if="{{detail.reviewedAt}}">审核时间：{{detail.reviewedAt}}</view>
+    <view class="reject" wx:if="{{detail.rejectReason}}">拒绝原因：{{detail.rejectReason}}</view>
+    <view class="reject" wx:if="{{detail.deleteReason}}">删除原因：{{detail.deleteReason}}</view>
+  </view>
+  <view class="card main" wx:if="{{detail.before || detail.after}}">
+    <view class="section-title">变更对比</view>
+    <spot-change-diff before="{{detail.before}}" after="{{detail.after}}"></spot-change-diff>
+  </view>
+  <map wx:if="{{markers.length}}" class="map" latitude="{{markers[0].latitude}}" longitude="{{markers[0].longitude}}" markers="{{markers}}" scale="14"></map>
+  <review-action-bar wx:if="{{detail.reviewStatus === 'PENDING'}}" disabled="{{submitting}}" bind:approve="approve" bind:reject="reject"></review-action-bar>
+  <bottom-nav></bottom-nav>
+  <fish-loading></fish-loading>
+</view>

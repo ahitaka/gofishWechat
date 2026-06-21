@@ -1,0 +1,64 @@
+<view class="page detail-page" wx:if="{{spot}}">
+  <view class="nav">
+    <view class="nav-title">我的钓点详情</view>
+  </view>
+  <cached-image custom-class="hero" src="{{spot.coverUrl || '/images/default-goods-image.png'}}" mode="aspectFill"></cached-image>
+  <view class="card main">
+    <view class="top">
+      <view class="title">{{spot.name}}</view>
+      <view class="tags">
+        <spot-visibility-tag value="{{spot.visibility}}"></spot-visibility-tag>
+        <review-status-tag value="{{spot.reviewStatus}}"></review-status-tag>
+      </view>
+    </view>
+    <view wx:if="{{spot.address}}" class="text">{{spot.address}}</view>
+    <view class="text">{{spot.description}}</view>
+    <view class="reject" wx:if="{{spot.reviewStatus === 'REJECTED'}}">拒绝原因：{{spot.rejectReason}}</view>
+  </view>
+  <map class="map" latitude="{{spot.latitude}}" longitude="{{spot.longitude}}" markers="{{markers}}" scale="14"></map>
+  <button class="nav-btn" bindtap="openNavigation">导航到这里</button>
+  <view class="card info">
+    <view>鱼种：{{fishText}}</view>
+    <view wx:if="{{publicSpot}}">评分：{{publicSpot.rating}} 分 / {{publicSpot.reviewCount}} 条评价</view>
+    <view wx:if="{{publicSpot}}">相关帖子：<text class="post-link" bindtap="openSpotPosts">{{publicSpot.postCount || 0}} 篇</text></view>
+    <view>收费：{{spot.feeType === 'FREE' ? '免费' : spot.feeType === 'PAID' ? '收费' : '未知'}}</view>
+    <view>停车：{{spot.parkingSupported ? '支持' : '不支持'}}</view>
+    <view>夜钓：{{spot.nightFishingSupported ? '支持' : '不支持'}}</view>
+    <view>创建时间：{{createdAtText}}</view>
+    <view>更新时间：{{updatedAtText}}</view>
+  </view>
+  <view class="images">
+    <cached-image wx:for="{{spot.imageUrls}}" wx:key="*this" custom-class="detail-image" src="{{item}}" mode="aspectFill"></cached-image>
+  </view>
+  <view wx:if="{{publicSpot}}" class="card review-form">
+    <view class="section-title">给钓点评分</view>
+    <view class="rating-input">
+      <text wx:for="{{ratingOptions}}" wx:key="*this" data-rating="{{item}}" bindtap="setReviewRating" class="{{item <= reviewRating ? 'active' : ''}}">★</text>
+    </view>
+    <textarea value="{{reviewContent}}" maxlength="1000" placeholder="留下你的评价..." bindinput="onReviewInput"></textarea>
+    <button class="primary-btn review-submit" loading="{{reviewSubmitting}}" disabled="{{reviewSubmitting}}" bindtap="submitReview">提交评价</button>
+  </view>
+  <view wx:if="{{publicSpot}}" class="card reviews">
+    <view class="section-title">钓友评价</view>
+    <block wx:if="{{reviews.length}}">
+      <view wx:for="{{reviews}}" wx:key="id" class="review-item">
+        <view class="review-head">
+          <text>{{(item.author && item.author.nickname) || '钓友'}}</text>
+          <text>{{item.createdAtText}}</text>
+        </view>
+        <view class="review-stars">{{item.rating}} 分</view>
+        <view wx:if="{{item.content}}" class="review-content">{{item.content}}</view>
+      </view>
+    </block>
+    <empty-state wx:else text="暂无评价"></empty-state>
+  </view>
+  <view class="actions">
+    <button bindtap="edit" disabled="{{spot.reviewStatus === 'PENDING'}}">编辑</button>
+    <button bindtap="remove" disabled="{{spot.reviewStatus === 'PENDING'}}">删除</button>
+    <button wx:if="{{spot.visibility === 'PRIVATE' || spot.reviewStatus === 'REJECTED'}}" class="primary-btn" bindtap="publish">发布</button>
+    <button wx:if="{{spot.reviewStatus === 'PENDING'}}" class="primary-btn" bindtap="cancel">取消发布</button>
+    <button class="favorite {{isFavorite ? 'favorited' : ''}}" bindtap="toggleFavorite">{{isFavorite ? '已收藏' : '收藏'}}</button>
+  </view>
+  <bottom-nav></bottom-nav>
+  <fish-loading></fish-loading>
+</view>

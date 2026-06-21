@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "user-avatar": "/components/user-avatar/index",
+    "bottom-nav": "/components/bottom-nav/index"
+  }
+}

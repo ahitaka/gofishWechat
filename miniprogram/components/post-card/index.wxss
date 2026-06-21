@@ -1,0 +1,136 @@
+.post-card {
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
+  padding: 28rpx;
+}
+
+.author {
+  align-items: center;
+  display: flex;
+  gap: 18rpx;
+}
+
+.author-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.name-row {
+  align-items: center;
+  display: flex;
+  gap: 10rpx;
+}
+
+.name {
+  color: #222222;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.level {
+  background: #EAF8F0;
+  border-radius: 8rpx;
+  color: #21B56B;
+  font-size: 20rpx;
+  padding: 2rpx 8rpx;
+}
+
+.time {
+  color: #777777;
+  font-size: 23rpx;
+  margin-top: 4rpx;
+}
+
+.follow {
+  border: 1rpx solid #21B56B;
+  border-radius: 20rpx;
+  color: #21B56B;
+  font-size: 30rpx;
+  line-height: 1;
+  margin-right: 25rpx;
+  padding: 10rpx 25rpx;
+}
+
+.followed {
+  border-color: #EEEEEE;
+  color: #777777;
+}
+
+.content {
+  color: #222222;
+  font-size: 30rpx;
+  line-height: 1.6;
+  margin-top: 22rpx;
+}
+
+.images {
+  display: grid;
+  gap: 8rpx;
+  margin-top: 18rpx;
+}
+
+.count-1 {
+  grid-template-columns: 1fr;
+}
+
+.count-2,
+.count-4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.count-3,
+.count-5,
+.count-6,
+.count-7,
+.count-8,
+.count-9 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.post-image {
+  aspect-ratio: 1;
+  background: #F7F8FA;
+  border-radius: 12rpx;
+  width: 100%;
+}
+
+.count-1 .post-image {
+  aspect-ratio: 1.7;
+}
+
+.spot {
+  color: #21B56B;
+  font-size: 24rpx;
+  margin-top: 18rpx;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  margin-top: 16rpx;
+}
+
+.tags text {
+  color: #2F80ED;
+  font-size: 24rpx;
+}
+
+.actions {
+  border-top: 1rpx solid #EEEEEE;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 22rpx;
+  padding-top: 20rpx;
+}
+
+.actions button {
+  color: #777777;
+  font-size: 26rpx;
+}
+
+.actions .liked {
+  color: #21B56B;
+  font-weight: 500;
+}

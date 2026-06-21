@@ -1,0 +1,15 @@
+<view class="page my-posts-page">
+  <view class="nav">
+    <view class="nav-title">我的发布</view>
+  </view>
+  <view class="feed">
+    <block wx:if="{{posts.length}}">
+      <view wx:for="{{posts}}" wx:key="id" class="post-row">
+        <post-card post="{{item}}" currentUserId="{{currentUserId}}" bind:comment="openComment" bind:sharepost="sharePost" bind:spot="openSpot" bind:preview="previewImage"></post-card>
+      </view>
+    </block>
+    <empty-state wx:else text="暂无发布动态"></empty-state>
+  </view>
+  <bottom-nav></bottom-nav>
+  <fish-loading></fish-loading>
+</view>

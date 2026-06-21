@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/spots/index",
+    "pages/community/index",
+    "pages/publish/index",
+    "pages/messages/index",
+    "pages/profile/index",
+    "pages/settings/index",
+    "pages/my-posts/index",
+    "pages/user-list/index",
+    "pages/user-profile/index",
+    "pages/spot-detail/index",
+    "pages/post-detail/index",
+    "pages/spot-form/index",
+    "pages/my-spots/index",
+    "pages/my-spot-detail/index",
+    "pages/admin/reviews/index",
+    "pages/admin/review-detail/index",
+    "pages/notification-detail/index",
+    "pages/my-favorites/index",
+    "pages/history/index"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundColor": "#F7F8FA",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#666666",
+    "selectedColor": "#21B56B",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/spots/index",
+        "text": "找钓点"
+      },
+      {
+        "pagePath": "pages/community/index",
+        "text": "社区"
+      },
+      {
+        "pagePath": "pages/publish/index",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/messages/index",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于查找附近钓点和发布钓点位置"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseLocation"
+  ],
+  "usingComponents": {
+    "cached-image": "/components/cached-image/index",
+    "fish-loading": "/components/fish-loading/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

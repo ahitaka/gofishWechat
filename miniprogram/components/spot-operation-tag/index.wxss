@@ -1,0 +1,8 @@
+.tag {
+  background: #F7F8FA;
+  border-radius: 10rpx;
+  color: #777777;
+  display: inline-flex;
+  font-size: 22rpx;
+  padding: 6rpx 12rpx;
+}

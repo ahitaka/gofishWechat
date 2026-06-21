@@ -1,0 +1,23 @@
+<view class="page community-page">
+  <view class="nav">
+    <view class="nav-title">社区分享</view>
+  </view>
+  <view class="tabs">
+    <view wx:for="{{tabs}}" wx:key="key" class="tab {{activeTab === item.key ? 'active' : ''}}" data-key="{{item.key}}" bindtap="switchFeed">
+      {{item.label}}
+    </view>
+  </view>
+  <view wx:if="{{spotFilter}}" class="spot-filter">
+    <text>{{spotFilter.spotName}} 的帖子</text>
+    <button bindtap="clearSpotFilter">清除</button>
+  </view>
+  <view class="feed">
+    <block wx:if="{{posts.length}}">
+      <view wx:for="{{posts}}" wx:key="id" class="post-row">
+        <post-card post="{{item}}" currentUserId="{{currentUserId}}" bind:like="toggleLike" bind:follow="toggleFollow" bind:comment="openComment" bind:opencard="openComment" bind:sharepost="sharePost" bind:spot="openSpot" bind:preview="previewImage"></post-card>
+      </view>
+    </block>
+    <empty-state wx:else text="暂无社区动态"></empty-state>
+  </view>
+  <fish-loading></fish-loading>
+</view>

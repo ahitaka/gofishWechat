@@ -1,0 +1,175 @@
+.detail-page {
+  padding: 0 32rpx calc(180rpx + env(safe-area-inset-bottom));
+}
+
+.detail-page .nav {
+  margin: 0 -32rpx;
+}
+
+.hero,
+.map {
+  border-radius: 24rpx;
+  height: 320rpx;
+  margin-bottom: 16rpx;
+  width: 100%;
+}
+
+.nav-btn {
+  align-items: center;
+  background: #21B56B;
+  border-radius: 16rpx;
+  color: #FFFFFF;
+  display: flex;
+  font-size: 28rpx;
+  height: 88rpx;
+  justify-content: center;
+  margin: 0 0 24rpx;
+}
+
+.main,
+.info,
+.review-form,
+.reviews {
+  margin-bottom: 24rpx;
+  padding: 28rpx;
+}
+
+.top {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.tags {
+  display: flex;
+  gap: 10rpx;
+}
+
+.tag {
+  background: #EAF8F0;
+  border-radius: 10rpx;
+  color: #21B56B;
+  font-size: 24rpx;
+  padding: 6rpx 12rpx;
+}
+
+.text,
+.info {
+  color: #777777;
+  font-size: 26rpx;
+  line-height: 1.7;
+  margin-top: 12rpx;
+}
+
+.reject {
+  color: #E5484D;
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+
+.post-link {
+  color: #21B56B;
+  font-weight: 600;
+}
+
+.images {
+  display: grid;
+  gap: 12rpx;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.detail-image {
+  aspect-ratio: 1;
+  border-radius: 16rpx;
+  width: 100%;
+}
+
+.actions {
+  display: grid;
+  gap: 16rpx;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 28rpx;
+}
+
+.actions button {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  color: #21B56B;
+  font-size: 28rpx;
+  padding: 22rpx 0;
+}
+
+.actions .primary-btn {
+  background: #21B56B;
+  color: #FFFFFF;
+}
+
+.actions .favorite.favorited {
+  background: #EAF8F0;
+  color: #21B56B;
+}
+
+.section-title {
+  color: #222222;
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 18rpx;
+}
+
+.rating-input {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 18rpx;
+}
+
+.rating-input text {
+  color: #D6D6D6;
+  font-size: 44rpx;
+}
+
+.rating-input .active {
+  color: #F5A623;
+}
+
+.review-form textarea {
+  background: #F7F8FA;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+  min-height: 160rpx;
+  padding: 20rpx;
+  width: 100%;
+}
+
+.review-submit {
+  margin-top: 18rpx;
+}
+
+.review-item {
+  border-top: 1rpx solid #EEEEEE;
+  padding: 20rpx 0;
+}
+
+.review-head {
+  color: #777777;
+  display: flex;
+  font-size: 24rpx;
+  justify-content: space-between;
+}
+
+.review-stars {
+  color: #F5A623;
+  font-size: 26rpx;
+  margin-top: 8rpx;
+}
+
+.review-content {
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 1.6;
+  margin-top: 8rpx;
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- 鱼尾 -->
+  <path d="M8 32 Q2 18 14 22 Q20 26 18 32 Q20 38 14 42 Q2 46 8 32" fill="#21B56B"/>
+  <!-- 鱼身 -->
+  <ellipse cx="36" cy="32" rx="22" ry="16" fill="#21B56B"/>
+  <!-- 背鳍 -->
+  <path d="M30 16 L38 8 L46 18 Z" fill="#1DA35F"/>
+  <!-- 腹鳍 -->
+  <path d="M30 48 L38 56 L46 46 Z" fill="#1DA35F"/>
+  <!-- 鱼眼 -->
+  <circle cx="46" cy="28" r="5" fill="#FFFFFF"/>
+  <circle cx="47" cy="27" r="2.5" fill="#222222"/>
+  <!-- 鱼鳞纹理 -->
+  <path d="M28 26 Q32 30 28 34" fill="none" stroke="#1DA35F" stroke-width="2" stroke-linecap="round"/>
+  <path d="M34 24 Q38 28 34 32" fill="none" stroke="#1DA35F" stroke-width="2" stroke-linecap="round"/>
+  <path d="M34 32 Q38 36 34 40" fill="none" stroke="#1DA35F" stroke-width="2" stroke-linecap="round"/>
+</svg>

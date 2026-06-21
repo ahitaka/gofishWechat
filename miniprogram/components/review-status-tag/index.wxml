@@ -1,0 +1,3 @@
+<view wx:if="{{value && value !== 'NOT_SUBMITTED'}}" class="tag status-{{value}}">
+  {{value === 'PENDING' ? '正在审核' : value === 'APPROVED' ? '审核通过' : '审核拒绝'}}
+</view>

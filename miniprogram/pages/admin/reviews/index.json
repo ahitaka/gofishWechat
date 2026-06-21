@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "bottom-nav": "/components/bottom-nav/index",
+    "empty-state": "/components/empty-state/index",
+    "spot-operation-tag": "/components/spot-operation-tag/index",
+    "review-status-tag": "/components/review-status-tag/index"
+  },
+  "enablePullDownRefresh": true
+}

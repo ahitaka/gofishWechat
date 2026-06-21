@@ -1,0 +1,18 @@
+<view class="page user-list-page">
+  <view class="nav">
+    <view class="nav-title">{{title}}</view>
+  </view>
+  <view class="list">
+    <view wx:for="{{users}}" wx:key="id" class="user-row card" data-id="{{item.id}}" bindtap="openUser">
+      <user-avatar src="{{item.avatarUrl || '/images/avatar.png'}}"></user-avatar>
+      <view class="main">
+        <view class="name">{{item.nickname}}</view>
+        <view class="meta">Lv.{{item.level}} · 粉丝 {{item.followerCount}}</view>
+      </view>
+      <view class="arrow">›</view>
+    </view>
+    <empty-state wx:if="{{!users.length}}" text="暂无用户"></empty-state>
+  </view>
+  <bottom-nav></bottom-nav>
+  <fish-loading></fish-loading>
+</view>

@@ -1,0 +1,57 @@
+<view class="page spots-page">
+  <view class="nav">
+    <view class="nav-title">找钓点</view>
+  </view>
+  <view class="search">
+    <input value="{{keyword}}" placeholder="搜索地点、水域、钓点" bindinput="onKeywordInput" confirm-type="search" bindconfirm="searchSpots" />
+    <button bindtap="searchSpots">搜索</button>
+  </view>
+  <view class="map-wrap">
+    <map
+      class="map"
+      id="spotMap"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      circles="{{circles}}"
+      scale="13"
+      bindmarkertap="onMarkerTap"
+      show-location
+    ></map>
+    <cover-image wx:if="{{selectingCreatePoint}}" class="center-pin" src="/images/location-pin.png" mode="aspectFit"></cover-image>
+    <cover-view class="create-controls">
+      <cover-view wx:if="{{!selectingCreatePoint}}" class="create-btn" bindtap="startCreateSpot">新增钓点</cover-view>
+      <block wx:else>
+        <cover-view class="create-btn confirm" bindtap="confirmCreateSpot">确认新增</cover-view>
+        <cover-view class="create-btn cancel" bindtap="cancelCreateSpot">取消</cover-view>
+      </block>
+    </cover-view>
+    <cover-view wx:if="{{selectingCreatePoint}}" class="map-help">拖动或缩放地图，将绿色定位标志对准新增位置</cover-view>
+    <cover-view class="filters">
+      <cover-view wx:for="{{filters}}" wx:key="value" class="filter {{activeFilter === item.value ? 'active' : ''}}" data-value="{{item.value}}" bindtap="changeFilter">
+        {{item.label}}
+      </cover-view>
+    </cover-view>
+    <cover-view class="recenter" bindtap="handleLocateTap">⌖</cover-view>
+  </view>
+  <view class="sheet">
+    <view class="sheet-header">
+      <view>
+        <view class="section-title">附近钓点</view>
+        <view class="summary">{{spots.length}} 个可选钓点</view>
+      </view>
+      <picker mode="selector" range="{{sortLabels}}" value="{{sortIndex}}" bindchange="changeSort">
+        <view class="sort">{{sortLabels[sortIndex]}}</view>
+      </picker>
+    </view>
+    <scroll-view class="spot-list" scroll-y scroll-into-view="{{scrollTarget}}">
+      <block wx:if="{{spots.length}}">
+        <view id="spot-{{item.id}}" wx:for="{{spots}}" wx:key="id" class="spot-row">
+          <spot-card spot="{{item}}" active="{{item.id === selectedSpotId}}" bind:select="selectSpot" bind:posts="openSpotPosts"></spot-card>
+        </view>
+      </block>
+      <empty-state wx:else text="没有找到匹配钓点"></empty-state>
+    </scroll-view>
+  </view>
+  <fish-loading></fish-loading>
+</view>

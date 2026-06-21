@@ -1,0 +1,1 @@
+<view class="tag">{{value === 'CREATE' ? '新增钓点' : value === 'UPDATE' ? '修改钓点' : value === 'DELETE' ? '删除钓点' : '申请'}}</view>

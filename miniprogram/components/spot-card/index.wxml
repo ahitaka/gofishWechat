@@ -1,0 +1,24 @@
+<view class="spot-card {{active ? 'active' : ''}}" bindtap="handleTap">
+  <cached-image custom-class="cover" src="{{spot.coverUrl}}" mode="aspectFill"></cached-image>
+  <view class="content">
+    <view class="header">
+      <view class="name">{{spot.name}}</view>
+      <view class="distance">{{spot.distanceKm}}km</view>
+    </view>
+    <view class="meta">
+      <text class="type">{{spot.typeLabel}}</text>
+      <text wx:if="{{spot.isMine && spot.visibility === 'PRIVATE'}}" class="mine private">私人</text>
+      <text wx:if="{{spot.isMine && spot.visibility === 'PUBLIC'}}" class="mine public">我的公开</text>
+      <text wx:if="{{spot.city || spot.district}}" class="address">{{spot.city}}{{spot.district}}</text>
+      <text wx:if="{{spot.address && spot.address !== '地图选点位置'}}" class="address">{{spot.address}}</text>
+    </view>
+    <view class="fish">
+      <text wx:for="{{spot.fishSpecies}}" wx:key="*this">{{item}}</text>
+    </view>
+    <view class="footer">
+      <rating-stars score="{{spot.rating}}"></rating-stars>
+      <text class="reviews">{{spot.reviewCount}} 条评价</text>
+      <view class="post-count" catchtap="openPosts">{{spot.postCount || 0}} 帖</view>
+    </view>
+  </view>
+</view>

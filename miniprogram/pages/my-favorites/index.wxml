@@ -1,0 +1,17 @@
+<view class="page my-favorites-page">
+  <view class="nav">
+    <view class="nav-title">我的收藏</view>
+  </view>
+  <view class="favorites-list">
+    <block wx:if="{{favorites.length}}">
+      <view wx:for="{{favorites}}" wx:key="id" class="favorite-row">
+        <my-spot-card spot="{{item}}" favorite="true" bind:unfavorite="toggleFavorite" bind:open="openSpot"></my-spot-card>
+      </view>
+      <view class="end-tip" wx:if="{{noMore}}">没有更多了</view>
+    </block>
+    <empty-state wx:if="{{!favorites.length && !loading}}" text="暂无收藏的钓点"></empty-state>
+  </view>
+  <bottom-nav></bottom-nav>
+  <bottom-safe-area></bottom-safe-area>
+  <fish-loading></fish-loading>
+</view>

@@ -1,0 +1,1 @@
+<view class="tag {{active ? 'active' : ''}}"><slot></slot>{{label}}</view>

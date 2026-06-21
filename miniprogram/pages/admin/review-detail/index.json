@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "bottom-nav": "/components/bottom-nav/index",
+    "spot-operation-tag": "/components/spot-operation-tag/index",
+    "review-status-tag": "/components/review-status-tag/index",
+    "spot-change-diff": "/components/spot-change-diff/index",
+    "review-action-bar": "/components/review-action-bar/index"
+  }
+}

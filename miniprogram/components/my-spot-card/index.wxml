@@ -1,0 +1,25 @@
+<view class="card-wrap" bindtap="open">
+  <cached-image custom-class="cover" src="{{coverUrl}}" mode="aspectFill"></cached-image>
+  <view class="body">
+    <view class="name">{{spot.name}}</view>
+    <view wx:if="{{spot.address}}" class="address">{{spot.address}}</view>
+    <view class="tags">
+      <spot-visibility-tag value="{{spot.visibility}}"></spot-visibility-tag>
+      <review-status-tag value="{{spot.reviewStatus}}"></review-status-tag>
+      <spot-operation-tag wx:if="{{spot.latestOperationType}}" value="{{spot.latestOperationType}}"></spot-operation-tag>
+    </view>
+    <view class="reject" wx:if="{{spot.reviewStatus === 'REJECTED'}}">{{spot.rejectReason}}</view>
+    <view class="time">更新于 {{spot.updatedAt}}</view>
+    <view class="actions" catchtap="noop">
+      <button wx:if="{{favorite}}" bindtap="unfavorite">取消收藏</button>
+      <block wx:if="{{!favorite}}">
+        <button bindtap="edit">编辑</button>
+        <button bindtap="remove">删除</button>
+        <button wx:if="{{spot.visibility === 'PRIVATE' || spot.reviewStatus === 'REJECTED'}}" class="primary" bindtap="publish">
+          {{spot.reviewStatus === 'REJECTED' ? '重新提交' : '发布'}}
+        </button>
+        <button wx:if="{{spot.reviewStatus === 'PENDING'}}">查看审核</button>
+      </block>
+    </view>
+  </view>
+</view>

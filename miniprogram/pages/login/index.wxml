@@ -1,0 +1,26 @@
+<view class="page login-page">
+  <view class="panel">
+    <view class="brand">
+      <image class="logo" src="/images/default-goods-image.png" mode="aspectFill"></image>
+      <view>
+        <view class="title">钓鱼不打龟</view>
+        <view class="desc">登录后保存钓点、发布鱼获和接收消息</view>
+      </view>
+    </view>
+    <view class="card auth-card">
+      <button class="avatar-row" open-type="chooseAvatar" bindchooseavatar="chooseAvatar">
+        <text>头像</text>
+        <image class="avatar" src="{{avatarUrl || '/images/avatar.png'}}" mode="aspectFill"></image>
+      </button>
+      <view class="field">
+        <text>昵称</text>
+        <input type="nickname" value="{{nickname}}" placeholder="请输入微信昵称" maxlength="32" bindinput="setNickname" />
+      </view>
+    </view>
+    <button class="primary-btn login-btn" open-type="getPhoneNumber" bindgetphonenumber="loginWithWechat" loading="{{submitting}}">
+      授权手机号并登录
+    </button>
+    <view class="tip">登录即表示同意使用微信头像、昵称和手机号完善账号资料</view>
+  </view>
+  <fish-loading></fish-loading>
+</view>

@@ -1,0 +1,1 @@
+<view class="tag {{value === 'PRIVATE' ? 'private' : 'public'}}">{{value === 'PRIVATE' ? '私人' : '公开'}}</view>

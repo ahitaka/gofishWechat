@@ -1,0 +1,30 @@
+<view class="page reviews-page">
+  <view class="nav">
+    <view class="nav-title">我的审核</view>
+  </view>
+  <view class="tabs">
+    <view wx:for="{{statusTabs}}" wx:key="key" class="tab {{status === item.key ? 'active' : ''}}" data-key="{{item.key}}" bindtap="switchStatus">
+      {{item.label}}<text wx:if="{{item.key === 'PENDING' && pendingCount}}"> {{pendingCount}}</text>
+    </view>
+  </view>
+  <view class="filters">
+    <view wx:for="{{typeTabs}}" wx:key="key" class="chip {{operationType === item.key ? 'active' : ''}}" data-key="{{item.key}}" bindtap="switchType">{{item.label}}</view>
+  </view>
+  <block wx:if="{{reviews.length}}">
+    <view wx:for="{{reviews}}" wx:key="id" class="review card" data-id="{{item.id}}" bindtap="open">
+      <image class="cover" src="{{item.coverUrl || '/images/default-goods-image.png'}}" mode="aspectFill"></image>
+      <view class="body">
+        <view class="name">{{item.spotName}}</view>
+        <view class="meta">{{item.submitter.nickname}} · {{item.submittedAt}}</view>
+        <view class="tags">
+          <spot-operation-tag value="{{item.operationType}}"></spot-operation-tag>
+          <review-status-tag value="{{item.reviewStatus}}"></review-status-tag>
+        </view>
+        <view wx:if="{{item.rejectReason}}" class="reject">{{item.rejectReason}}</view>
+      </view>
+    </view>
+  </block>
+  <empty-state wx:else text="暂无审核任务"></empty-state>
+  <bottom-nav></bottom-nav>
+  <fish-loading></fish-loading>
+</view>

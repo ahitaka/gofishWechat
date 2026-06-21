@@ -1,0 +1,26 @@
+<view class="page my-spots-page">
+  <view class="nav">
+    <view class="nav-title">我的钓点</view>
+  </view>
+  <view class="tabs">
+    <view wx:for="{{primaryTabs}}" wx:key="key" class="tab {{primaryTab === item.key ? 'active' : ''}}" data-key="{{item.key}}" bindtap="switchPrimary">{{item.label}}</view>
+  </view>
+  <view wx:if="{{primaryTab === 'created'}}" class="filters">
+    <view wx:for="{{visibilityTabs}}" wx:key="key" class="chip {{visibilityFilter === item.key ? 'active' : ''}}" data-key="{{item.key}}" bindtap="switchVisibility">{{item.label}}</view>
+  </view>
+  <view wx:if="{{primaryTab === 'created' && visibilityFilter === 'PUBLIC'}}" class="filters">
+    <view wx:for="{{reviewTabs}}" wx:key="key" class="chip {{reviewFilter === item.key ? 'active' : ''}}" data-key="{{item.key}}" bindtap="switchReview">{{item.label}}</view>
+  </view>
+  <view wx:if="{{error}}" class="error card">
+    <text>{{error}}</text>
+    <button bindtap="retry">重试</button>
+  </view>
+  <block wx:if="{{!error && spots.length}}">
+    <view wx:for="{{spots}}" wx:key="id" class="row">
+      <my-spot-card spot="{{item}}" favorite="{{primaryTab === 'favorite'}}" bind:open="openSpot" bind:edit="editSpot" bind:remove="removeSpot" bind:publish="publishSpot" bind:unfavorite="unfavorite"></my-spot-card>
+    </view>
+  </block>
+  <empty-state wx:if="{{!error && !spots.length && !loading}}" text="暂无钓点"></empty-state>
+  <bottom-nav></bottom-nav>
+  <fish-loading></fish-loading>
+</view>

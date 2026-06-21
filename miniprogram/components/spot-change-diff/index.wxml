@@ -1,0 +1,14 @@
+<view class="diff">
+  <view class="col">
+    <view class="title">修改前</view>
+    <view>名称：{{before.name || '-'}}</view>
+    <view>地址：{{before.address || '-'}}</view>
+    <view>描述：{{before.description || '-'}}</view>
+  </view>
+  <view class="col">
+    <view class="title">修改后</view>
+    <view>名称：{{after.name || '-'}}</view>
+    <view>地址：{{after.address || '-'}}</view>
+    <view>描述：{{after.description || '-'}}</view>
+  </view>
+</view>

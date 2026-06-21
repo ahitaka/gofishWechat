@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "user-avatar": "/components/user-avatar/index",
+    "spot-card": "/components/spot-card/index",
+    "post-card": "/components/post-card/index",
+    "empty-state": "/components/empty-state/index",
+    "bottom-nav": "/components/bottom-nav/index"
+  },
+  "enablePullDownRefresh": true
+}

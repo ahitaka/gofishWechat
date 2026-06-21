@@ -1,0 +1,28 @@
+<view class="post-card">
+  <view class="author">
+    <user-avatar src="{{post.author.avatarUrl}}"></user-avatar>
+    <view class="author-main">
+      <view class="name-row">
+        <text class="name">{{post.author.nickname}}</text>
+        <text class="level">Lv.{{post.author.level}}</text>
+      </view>
+      <view class="time">{{post.author.city}} · {{post.createdAtText || '刚刚'}}</view>
+    </view>
+    <view wx:if="{{post.author.id !== currentUserId}}" class="follow {{post.author.followed ? 'followed' : ''}}" catchtap="toggleFollow">
+      {{post.author.followed ? '已关注' : '关注'}}
+    </view>
+  </view>
+  <view class="content" catchtap="openCard">{{post.content}}</view>
+  <view class="images count-{{post.images.length}}">
+    <cached-image wx:for="{{post.images}}" wx:key="*this" custom-class="post-image" src="{{item}}" mode="aspectFill" data-index="{{index}}" catchtap="previewImage"></cached-image>
+  </view>
+  <view class="spot" wx:if="{{post.spot}}" catchtap="openSpot">⌖ {{post.spot.name}}</view>
+  <view class="tags">
+    <text wx:for="{{post.tags}}" wx:key="*this">#{{item}}</text>
+  </view>
+  <view class="actions">
+    <button class="{{post.liked ? 'liked' : ''}}" catchtap="toggleLike">赞 {{post.likeCount}}</button>
+    <button catchtap="openComment">评论 {{post.commentCount}}</button>
+    <button open-type="share" catchtap="sharePost">分享 {{post.shareCount}}</button>
+  </view>
+</view>

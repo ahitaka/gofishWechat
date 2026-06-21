@@ -1,0 +1,6 @@
+.avatar {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  background: #EAF8F0;
+}

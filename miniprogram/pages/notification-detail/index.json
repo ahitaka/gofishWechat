@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "user-avatar": "/components/user-avatar/index",
+    "bottom-nav": "/components/bottom-nav/index",
+    "bottom-safe-area": "/components/bottom-safe-area/index",
+    "empty-state": "/components/empty-state/index"
+  },
+  "navigationBarTitleText": "消息"
+}

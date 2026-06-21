@@ -1,0 +1,21 @@
+.tag {
+  border-radius: 10rpx;
+  display: inline-flex;
+  font-size: 22rpx;
+  padding: 6rpx 12rpx;
+}
+
+.status-PENDING {
+  background: #FFF4E0;
+  color: #F5A623;
+}
+
+.status-APPROVED {
+  background: #EAF8F0;
+  color: #21B56B;
+}
+
+.status-REJECTED {
+  background: #FFECEC;
+  color: #E5484D;
+}

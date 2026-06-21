@@ -1,0 +1,55 @@
+.history-page {
+  padding: 0 32rpx 0;
+}
+
+.history-page .nav {
+  margin: 0 -32rpx;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.back {
+  color: #222222;
+  font-size: 48rpx;
+  width: 60rpx;
+}
+
+.nav-action {
+  color: #777777;
+  font-size: 28rpx;
+}
+
+.history-list {
+  padding-bottom: calc(180rpx + env(safe-area-inset-bottom));
+}
+
+.history-row {
+  margin-bottom: 20rpx;
+}
+
+.viewed-at {
+  color: #AAAAAA;
+  font-size: 22rpx;
+  margin-bottom: 12rpx;
+  padding-left: 8rpx;
+}
+
+.card-wrap {
+  position: relative;
+}
+
+.delete-btn {
+  color: #999999;
+  font-size: 24rpx;
+  padding: 12rpx 0;
+  text-align: center;
+  border-top: 1rpx solid #F0F0F0;
+}
+
+.end-tip {
+  color: #AAAAAA;
+  font-size: 24rpx;
+  padding: 32rpx 0;
+  text-align: center;
+}

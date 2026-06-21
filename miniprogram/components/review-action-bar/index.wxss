@@ -1,0 +1,29 @@
+.bar {
+  background: #FFFFFF;
+  border-top: 1rpx solid #EEEEEE;
+  bottom: calc(112rpx + env(safe-area-inset-bottom));
+  display: grid;
+  gap: 20rpx;
+  grid-template-columns: 1fr 1fr;
+  left: 0;
+  padding: 20rpx 32rpx calc(20rpx + env(safe-area-inset-bottom));
+  position: fixed;
+  right: 0;
+  z-index: 20;
+}
+
+.bar button {
+  border-radius: 16rpx;
+  font-size: 28rpx;
+  padding: 22rpx 0;
+}
+
+.reject {
+  background: #FFECEC;
+  color: #E5484D;
+}
+
+.approve {
+  background: #21B56B;
+  color: #FFFFFF;
+}

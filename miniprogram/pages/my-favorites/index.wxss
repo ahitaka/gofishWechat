@@ -1,0 +1,29 @@
+.my-favorites-page {
+  padding: 0 32rpx 0;
+}
+
+.my-favorites-page .nav {
+  margin: 0 -32rpx;
+}
+
+.favorites-list {
+  padding-bottom: calc(180rpx + env(safe-area-inset-bottom));
+}
+
+.favorite-row {
+  margin-bottom: 24rpx;
+}
+
+.unfavorite {
+  color: #777777;
+  font-size: 24rpx;
+  padding: 16rpx 0;
+  text-align: center;
+}
+
+.end-tip {
+  color: #AAAAAA;
+  font-size: 24rpx;
+  padding: 32rpx 0;
+  text-align: center;
+}

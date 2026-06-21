@@ -1,0 +1,63 @@
+.reviews-page {
+  padding: 0 32rpx calc(180rpx + env(safe-area-inset-bottom));
+}
+
+.reviews-page .nav {
+  margin: 0 -32rpx;
+}
+
+.tabs,
+.filters,
+.tags {
+  display: flex;
+  gap: 14rpx;
+  margin-bottom: 20rpx;
+}
+
+.tab,
+.chip {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  color: #777777;
+  font-size: 26rpx;
+  padding: 16rpx 22rpx;
+}
+
+.tab.active,
+.chip.active {
+  background: #EAF8F0;
+  color: #21B56B;
+}
+
+.review {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}
+
+.cover {
+  border-radius: 18rpx;
+  height: 150rpx;
+  width: 150rpx;
+}
+
+.body {
+  flex: 1;
+}
+
+.name {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.meta,
+.reject {
+  color: #777777;
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+
+.reject {
+  color: #E5484D;
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "bottom-nav": "/components/bottom-nav/index",
+    "empty-state": "/components/empty-state/index",
+    "spot-visibility-tag": "/components/spot-visibility-tag/index",
+    "review-status-tag": "/components/review-status-tag/index"
+  }
+}

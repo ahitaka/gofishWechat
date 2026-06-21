@@ -1,0 +1,41 @@
+<view class="page form-page">
+  <view class="nav">
+    <view class="nav-title">{{mode === 'edit' ? '编辑钓点' : '新增钓点'}}</view>
+  </view>
+  <view class="card form-card">
+    <input placeholder="钓点名称" value="{{form.name}}" data-field="name" bindinput="setField" />
+    <picker range="{{typeLabels}}" value="{{typeIndex}}" bindchange="changeType">
+      <view class="row"><text>水域类型</text><text>{{typeLabels[typeIndex]}}</text></view>
+    </picker>
+    <view class="row" bindtap="chooseLocation"><text>地图位置</text><text>{{form.latitude ? '已选择' : '选择位置'}}</text></view>
+    <input placeholder="地址" value="{{form.address}}" data-field="address" bindinput="setField" />
+    <textarea placeholder="钓点描述" value="{{form.description}}" data-field="description" bindinput="setField"></textarea>
+    <input placeholder="鱼种，用空格分隔" value="{{fishText}}" bindinput="setFish" />
+    <picker range="{{feeLabels}}" value="{{feeIndex}}" bindchange="changeFee">
+      <view class="row"><text>收费情况</text><text>{{feeLabels[feeIndex]}}</text></view>
+    </picker>
+    <input wx:if="{{form.feeType === 'PAID'}}" placeholder="收费金额" type="digit" data-field="feeAmount" bindinput="setField" />
+    <view class="row"><text>支持停车</text><switch checked="{{form.parkingSupported}}" data-field="parkingSupported" bindchange="setSwitch" color="#21B56B" /></view>
+    <view class="row"><text>支持夜钓</text><switch checked="{{form.nightFishingSupported}}" data-field="nightFishingSupported" bindchange="setSwitch" color="#21B56B" /></view>
+  </view>
+  <view class="card form-card">
+    <view class="section-title">封面和图片</view>
+    <view class="images">
+      <view wx:for="{{form.imageUrls}}" wx:key="*this" class="image-wrap">
+        <cached-image custom-class="image" src="{{item}}" mode="aspectFill" data-index="{{index}}" catchtap="previewImage"></cached-image>
+        <view class="delete-badge" data-index="{{index}}" catchtap="removeImage">×</view>
+      </view>
+      <button wx:if="{{form.imageUrls.length < 9}}" class="add" bindtap="chooseImages">+</button>
+    </view>
+  </view>
+  <view class="card publish-card">
+    <view>
+      <view class="section-title">是否发布</view>
+      <view class="hint">{{form.visibility === 'PUBLIC' ? '提交公开审核，管理员审核通过后将向其他用户展示。' : '保存为私人钓点，仅自己可见。'}}</view>
+    </view>
+    <switch checked="{{form.visibility === 'PUBLIC'}}" bindchange="changeVisibility" color="#21B56B" />
+  </view>
+  <button class="primary-btn submit" loading="{{submitting}}" bindtap="submit">{{form.visibility === 'PUBLIC' ? '提交发布审核' : '保存私人钓点'}}</button>
+  <bottom-nav></bottom-nav>
+  <fish-loading></fish-loading>
+</view>

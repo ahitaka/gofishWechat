@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "spot-visibility-tag": "/components/spot-visibility-tag/index",
+    "review-status-tag": "/components/review-status-tag/index",
+    "spot-operation-tag": "/components/spot-operation-tag/index"
+  }
+}

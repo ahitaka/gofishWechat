@@ -1,0 +1,44 @@
+.user-profile-page {
+  padding: 0 32rpx calc(180rpx + env(safe-area-inset-bottom));
+}
+
+.user-profile-page .nav {
+  margin: 0 -32rpx;
+}
+
+.profile-card {
+  display: flex;
+  gap: 22rpx;
+  padding: 32rpx;
+}
+
+.main {
+  flex: 1;
+}
+
+.name {
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.meta,
+.bio {
+  color: #777777;
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+
+.section {
+  margin-top: 28rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 18rpx;
+}
+
+.spot-row,
+.post-row {
+  margin-bottom: 24rpx;
+}

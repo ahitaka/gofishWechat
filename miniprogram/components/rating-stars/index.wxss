@@ -1,0 +1,26 @@
+.rating {
+  align-items: center;
+  display: flex;
+  gap: 8rpx;
+}
+
+.stars {
+  display: flex;
+  gap: 2rpx;
+}
+
+.stars text {
+  color: #D8D8D8;
+  font-size: 24rpx;
+  letter-spacing: 0;
+}
+
+.stars .active {
+  color: #F5A623;
+}
+
+.score {
+  color: #222222;
+  font-size: 24rpx;
+  font-weight: 500;
+}

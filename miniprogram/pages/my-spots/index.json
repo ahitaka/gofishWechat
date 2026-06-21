@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "bottom-nav": "/components/bottom-nav/index",
+    "my-spot-card": "/components/my-spot-card/index",
+    "empty-state": "/components/empty-state/index"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,26 @@
+<view class="page notif-page">
+  <view class="nav">
+    <view class="back" bindtap="goBack">‹</view>
+    <view class="nav-title">{{title}}</view>
+  </view>
+  <view class="notif-list">
+    <block wx:if="{{notifications.length}}">
+      <view wx:for="{{notifications}}" wx:key="id" class="notif-item {{!item.isRead ? 'unread' : ''}}" data-index="{{index}}" bindtap="tapNotification">
+        <user-avatar src="{{item.actor.avatarUrl || '/images/avatar.png'}}"></user-avatar>
+        <view class="notif-main">
+          <view class="notif-top">
+            <text class="name">{{item.actor.nickname}}</text>
+            <text class="time">{{item.timeText}}</text>
+          </view>
+          <view class="notif-content">{{item.content}}</view>
+        </view>
+        <view class="dot" wx:if="{{!item.isRead}}"></view>
+      </view>
+      <view class="end-tip" wx:if="{{noMore}}">没有更多了</view>
+    </block>
+    <empty-state wx:if="{{!notifications.length && !loading}}" text="暂无消息"></empty-state>
+  </view>
+  <bottom-nav></bottom-nav>
+  <bottom-safe-area></bottom-safe-area>
+  <fish-loading></fish-loading>
+</view>

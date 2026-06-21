@@ -1,0 +1,18 @@
+<view class="page settings-page">
+  <view class="nav">
+    <view class="nav-title">设置</view>
+  </view>
+  <view class="card form-card">
+    <button class="avatar-picker" open-type="chooseAvatar" bindchooseavatar="chooseAvatar">
+      <user-avatar src="{{avatarUrl || '/images/avatar.png'}}"></user-avatar>
+      <text>修改头像</text>
+    </button>
+    <view class="field">
+      <text>昵称</text>
+      <input type="nickname" value="{{nickname}}" maxlength="32" placeholder="请输入昵称" bindinput="setNickname" />
+    </view>
+  </view>
+  <button class="primary-btn save-btn" loading="{{submitting}}" bindtap="save">保存</button>
+  <bottom-nav></bottom-nav>
+  <fish-loading></fish-loading>
+</view>

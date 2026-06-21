@@ -1,0 +1,86 @@
+.profile-page {
+  padding: 0 32rpx calc(180rpx + env(safe-area-inset-bottom));
+}
+
+.profile-page .nav {
+  margin: 0 -32rpx;
+}
+
+.profile-card {
+  align-items: center;
+  display: flex;
+  gap: 22rpx;
+  padding: 32rpx;
+}
+
+.nickname {
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.level {
+  color: #21B56B;
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 24rpx;
+  padding: 28rpx 0;
+  text-align: center;
+}
+
+.number {
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.label {
+  color: #777777;
+  font-size: 24rpx;
+  margin-top: 6rpx;
+}
+
+.menus {
+  margin-top: 24rpx;
+  padding: 0 28rpx;
+}
+
+.menu {
+  align-items: center;
+  border-bottom: 1rpx solid #EEEEEE;
+  display: flex;
+  font-size: 30rpx;
+  justify-content: space-between;
+  min-height: 96rpx;
+}
+
+.menu:last-child {
+  border-bottom: 0;
+}
+
+.arrow {
+  color: #BBBBBB;
+  font-size: 40rpx;
+}
+
+.right {
+  align-items: center;
+  display: flex;
+  gap: 12rpx;
+}
+
+.badge {
+  align-items: center;
+  background: #21B56B;
+  border-radius: 999rpx;
+  color: #FFFFFF;
+  display: flex;
+  font-size: 22rpx;
+  height: 36rpx;
+  justify-content: center;
+  min-width: 36rpx;
+  padding: 0 10rpx;
+}

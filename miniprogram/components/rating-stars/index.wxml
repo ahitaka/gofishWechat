@@ -1,0 +1,6 @@
+<view class="rating">
+  <view class="stars">
+    <text wx:for="{{stars}}" wx:key="index" class="{{item.active ? 'active' : ''}}">★</text>
+  </view>
+  <text class="score">{{scoreText}}</text>
+</view>

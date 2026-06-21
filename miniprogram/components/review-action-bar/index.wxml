@@ -1,0 +1,4 @@
+<view class="bar">
+  <button class="reject" disabled="{{disabled}}" bindtap="reject">审核拒绝</button>
+  <button class="approve" disabled="{{disabled}}" bindtap="approve">审核通过</button>
+</view>

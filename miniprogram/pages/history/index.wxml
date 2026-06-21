@@ -1,0 +1,23 @@
+<view class="page history-page">
+  <view class="nav">
+    <view class="back" bindtap="goBack">‹</view>
+    <view class="nav-title">浏览历史</view>
+    <view wx:if="{{history.length}}" class="nav-action" bindtap="clearAll">清空</view>
+  </view>
+  <view class="history-list">
+    <block wx:if="{{history.length}}">
+      <view wx:for="{{history}}" wx:key="id" class="history-row">
+        <view class="viewed-at">{{item.viewedAtText}}</view>
+        <view class="card-wrap">
+          <post-card post="{{item.post}}" bind:opencard="openPost" bind:spot="openPost"></post-card>
+          <view class="delete-btn" data-index="{{index}}" catchtap="removeItem">删除</view>
+        </view>
+      </view>
+      <view class="end-tip" wx:if="{{noMore}}">没有更多了</view>
+    </block>
+    <empty-state wx:if="{{!history.length && !loading}}" text="暂无浏览记录"></empty-state>
+  </view>
+  <bottom-nav></bottom-nav>
+  <bottom-safe-area></bottom-safe-area>
+  <fish-loading></fish-loading>
+</view>

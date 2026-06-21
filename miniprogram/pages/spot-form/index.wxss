@@ -1,0 +1,110 @@
+.form-page {
+  padding: 0 32rpx calc(260rpx + env(safe-area-inset-bottom));
+}
+
+.form-page .nav {
+  margin: 0 -32rpx;
+}
+
+.form-card,
+.publish-card {
+  margin-bottom: 24rpx;
+  padding: 28rpx;
+}
+
+input,
+textarea {
+  border-bottom: 1rpx solid #EEEEEE;
+  font-size: 28rpx;
+  min-height: 88rpx;
+  width: 100%;
+}
+
+textarea {
+  min-height: 180rpx;
+  padding-top: 22rpx;
+}
+
+.row,
+.publish-card {
+  align-items: center;
+  border-bottom: 1rpx solid #EEEEEE;
+  display: flex;
+  font-size: 28rpx;
+  justify-content: space-between;
+  min-height: 88rpx;
+}
+
+.publish-card {
+  border-bottom: 0;
+}
+
+.section-title {
+  color: #222222;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.hint {
+  color: #777777;
+  font-size: 24rpx;
+  margin-top: 8rpx;
+  max-width: 520rpx;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+  width: 100%;
+}
+
+.image-wrap {
+  aspect-ratio: 1;
+  position: relative;
+  width: calc((100% - 24rpx) / 3);
+}
+
+.image,
+.add {
+  aspect-ratio: 1;
+  background: #F7F8FA;
+  border-radius: 16rpx;
+  display: block;
+  width: 100%;
+}
+
+.delete-badge {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  color: #FFFFFF;
+  display: flex;
+  font-size: 32rpx;
+  height: 40rpx;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  right: 8rpx;
+  top: 8rpx;
+  width: 40rpx;
+}
+
+.add {
+  align-items: center;
+  color: #21B56B;
+  display: flex;
+  font-size: 56rpx;
+  justify-content: center;
+  width: calc((100% - 24rpx) / 3);
+}
+
+.submit {
+  bottom: calc(132rpx + env(safe-area-inset-bottom));
+  left: 32rpx;
+  position: fixed;
+  right: 32rpx;
+  z-index: 25;
+}

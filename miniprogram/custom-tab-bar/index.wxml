@@ -1,0 +1,8 @@
+<view class="tabbar">
+  <block wx:for="{{list}}" wx:key="key">
+    <view class="tab-item {{item.prominent ? 'prominent' : ''}}" data-path="{{item.pagePath}}" bindtap="switchTab">
+      <view class="icon {{selected === item.pagePath ? 'active' : ''}}">{{item.icon}}</view>
+      <view class="label {{selected === item.pagePath ? 'active' : ''}}">{{item.text}}</view>
+    </view>
+  </block>
+</view>

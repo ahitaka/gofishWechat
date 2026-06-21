@@ -1,0 +1,47 @@
+.settings-page {
+  padding: 0 32rpx calc(180rpx + env(safe-area-inset-bottom));
+}
+
+.settings-page .nav {
+  margin: 0 -32rpx;
+}
+
+.form-card {
+  padding: 0 28rpx;
+}
+
+.avatar-picker {
+  align-items: center;
+  background: #FFFFFF;
+  border-bottom: 1rpx solid #EEEEEE;
+  border-radius: 0;
+  color: #222222;
+  display: flex;
+  font-size: 30rpx;
+  gap: 22rpx;
+  justify-content: flex-start;
+  min-height: 132rpx;
+  padding: 0;
+}
+
+.field {
+  align-items: center;
+  display: flex;
+  gap: 24rpx;
+  min-height: 108rpx;
+}
+
+.field text {
+  color: #222222;
+  font-size: 30rpx;
+  width: 96rpx;
+}
+
+.field input {
+  flex: 1;
+  font-size: 30rpx;
+}
+
+.save-btn {
+  margin-top: 32rpx;
+}

@@ -1,0 +1,21 @@
+.diff {
+  display: grid;
+  gap: 16rpx;
+  grid-template-columns: 1fr 1fr;
+}
+
+.col {
+  background: #F7F8FA;
+  border-radius: 16rpx;
+  color: #777777;
+  font-size: 24rpx;
+  line-height: 1.6;
+  padding: 18rpx;
+}
+
+.title {
+  color: #222222;
+  font-size: 26rpx;
+  font-weight: 600;
+  margin-bottom: 8rpx;
+}

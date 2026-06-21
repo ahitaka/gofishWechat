@@ -1,0 +1,47 @@
+.my-spots-page {
+  padding: 0 32rpx calc(180rpx + env(safe-area-inset-bottom));
+}
+
+.my-spots-page .nav {
+  margin: 0 -32rpx;
+}
+
+.tabs,
+.filters {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 20rpx;
+}
+
+.tab,
+.chip {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  color: #777777;
+  font-size: 26rpx;
+  padding: 16rpx 24rpx;
+}
+
+.tab.active,
+.chip.active {
+  background: #EAF8F0;
+  color: #21B56B;
+  font-weight: 500;
+}
+
+.row {
+  margin-bottom: 20rpx;
+}
+
+.error {
+  align-items: center;
+  color: #777777;
+  display: flex;
+  justify-content: space-between;
+  padding: 28rpx;
+}
+
+.error button {
+  color: #21B56B;
+  font-size: 26rpx;
+}

@@ -1,0 +1,35 @@
+.user-list-page {
+  padding: 0 32rpx calc(180rpx + env(safe-area-inset-bottom));
+}
+
+.user-list-page .nav {
+  margin: 0 -32rpx;
+}
+
+.user-row {
+  align-items: center;
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 24rpx;
+}
+
+.main {
+  flex: 1;
+}
+
+.name {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.meta {
+  color: #777777;
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+
+.arrow {
+  color: #BBBBBB;
+  font-size: 40rpx;
+}

@@ -1,0 +1,6 @@
+<view class="fish-loading-mask {{visible ? 'visible' : ''}}" wx:if="{{visible}}">
+  <view class="fish-loading-box">
+    <image class="fish-loading-icon" src="/images/fish-loading.svg" mode="aspectFit"></image>
+    <view class="fish-loading-text">加载中...</view>
+  </view>
+</view>

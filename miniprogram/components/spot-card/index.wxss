@@ -1,0 +1,127 @@
+.spot-card {
+  background: #FFFFFF;
+  border: 2rpx solid transparent;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
+  display: flex;
+  gap: 20rpx;
+  padding: 20rpx;
+}
+
+.active {
+  border-color: #21B56B;
+}
+
+.cover {
+  background: #EAF8F0;
+  border-radius: 18rpx;
+  height: 156rpx;
+  width: 156rpx;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.header,
+.footer,
+.meta {
+  align-items: center;
+  display: flex;
+}
+
+.header {
+  gap: 12rpx;
+  justify-content: space-between;
+}
+
+.name {
+  color: #222222;
+  flex: 1;
+  font-size: 32rpx;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.distance {
+  color: #21B56B;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.meta {
+  gap: 12rpx;
+  margin-top: 10rpx;
+}
+
+.type {
+  background: #EAF8F0;
+  border-radius: 10rpx;
+  color: #21B56B;
+  font-size: 22rpx;
+  padding: 4rpx 10rpx;
+}
+
+.mine {
+  border-radius: 10rpx;
+  font-size: 22rpx;
+  padding: 4rpx 10rpx;
+}
+
+.mine.private {
+  background: #EAF2FF;
+  color: #2F80ED;
+}
+
+.mine.public {
+  background: #EAF8F0;
+  color: #21B56B;
+}
+
+.address,
+.reviews {
+  color: #777777;
+  font-size: 24rpx;
+}
+
+.address {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fish {
+  display: flex;
+  gap: 8rpx;
+  margin: 14rpx 0 8rpx;
+}
+
+.fish text {
+  background: #F7F8FA;
+  border-radius: 8rpx;
+  color: #777777;
+  font-size: 22rpx;
+  padding: 4rpx 10rpx;
+}
+
+.footer {
+  margin-top: 10rpx;
+  gap: 12rpx;
+}
+
+.post-count {
+  background: #EAF8F0;
+  border-radius: 999rpx;
+  color: #21B56B;
+  font-size: 22rpx;
+  padding: 4rpx 12rpx;
+}
+
+.coord {
+  color: #777777;
+  font-size: 22rpx;
+}

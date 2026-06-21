@@ -1,0 +1,30 @@
+<view class="page profile-page">
+  <view class="nav">
+    <view class="nav-title">我的</view>
+  </view>
+  <view class="profile-card card">
+    <user-avatar src="{{userInfo.avatarUrl}}"></user-avatar>
+    <view class="user">
+      <view class="nickname">{{userInfo.nickname}}</view>
+      <view class="level">Lv.{{userInfo.level}} {{userInfo.role === 'ADMIN' ? '管理员' : '钓友'}}</view>
+    </view>
+  </view>
+  <view class="stats card">
+    <view wx:for="{{stats}}" wx:key="label" data-key="{{item.key}}" bindtap="openStat">
+      <view class="number">{{item.value}}</view>
+      <view class="label">{{item.label}}</view>
+    </view>
+  </view>
+  <view class="menus card">
+    <block wx:for="{{menus}}" wx:key="title">
+      <view wx:if="{{!item.adminOnly || isAdmin}}" class="menu" data-title="{{item.title}}" bindtap="openMenu">
+        <text>{{item.title}}</text>
+        <view class="right">
+          <text wx:if="{{item.title === '我的审核' && pendingReviewCount}}" class="badge">{{pendingReviewCount}}</text>
+          <text class="arrow">›</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <fish-loading></fish-loading>
+</view>

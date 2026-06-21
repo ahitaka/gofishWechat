@@ -1,0 +1,165 @@
+.spots-page {
+  padding-bottom: calc(180rpx + env(safe-area-inset-bottom));
+}
+
+.search {
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  display: flex;
+  gap: 16rpx;
+  margin: 0 32rpx 20rpx;
+  padding: 14rpx 16rpx 14rpx 24rpx;
+}
+
+.search input {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.search button {
+  background: #EAF8F0;
+  border-radius: 14rpx;
+  color: #21B56B;
+  font-size: 26rpx;
+  padding: 12rpx 22rpx;
+}
+
+.map-wrap {
+  height: 48vh;
+  margin: 0 32rpx;
+  overflow: hidden;
+  position: relative;
+  border-radius: 28rpx;
+}
+
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  position: absolute;
+  right: 18rpx;
+  top: 18rpx;
+}
+
+.map-help {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 999rpx;
+  bottom: 24rpx;
+  color: #555555;
+  font-size: 22rpx;
+  left: 20rpx;
+  padding: 10rpx 16rpx;
+  position: absolute;
+}
+
+.center-pin {
+  height: 60rpx;
+  left: 50%;
+  margin-left: -25rpx;
+  margin-top: -60rpx; /* 图片底部对准地图中心，尖端指向目标位置 */
+  position: absolute;
+  top: 50%;
+  width: 50rpx;
+}
+
+.create-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  left: 20rpx;
+  position: absolute;
+  top: 20rpx;
+}
+
+.create-btn {
+  background: #FFFFFF;
+  border-radius: 22rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.12);
+  color: #21B56B;
+  font-size: 24rpx;
+  padding: 12rpx 20rpx;
+  text-align: center;
+}
+
+.create-btn.confirm {
+  background: #21B56B;
+  color: #FFFFFF;
+}
+
+.create-btn.cancel {
+  color: #666666;
+}
+
+.filter {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 22rpx;
+  color: #666666;
+  font-size: 24rpx;
+  padding: 10rpx 18rpx;
+  text-align: center;
+}
+
+.filter.active {
+  background: #21B56B;
+  color: #FFFFFF;
+}
+
+.recenter {
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 50%;
+  bottom: 88rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.12);
+  color: #21B56B;
+  display: flex;
+  font-size: 34rpx;
+  height: 72rpx;
+  justify-content: center;
+  position: absolute;
+  right: 20rpx;
+  width: 72rpx;
+}
+
+.sheet {
+  margin: 24rpx 32rpx 0;
+}
+
+.sheet-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+}
+
+.section-title {
+  color: #222222;
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.summary,
+.sort {
+  color: #777777;
+  font-size: 24rpx;
+  margin-top: 4rpx;
+}
+
+.sort {
+  background: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 10rpx 16rpx;
+}
+
+.spot-list {
+  max-height: 560rpx;
+}
+
+.spot-row {
+  margin-bottom: 20rpx;
+}

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "my-spot-card": "/components/my-spot-card/index",
+    "bottom-nav": "/components/bottom-nav/index",
+    "bottom-safe-area": "/components/bottom-safe-area/index",
+    "empty-state": "/components/empty-state/index"
+  },
+  "navigationBarTitleText": "我的收藏",
+  "enablePullDownRefresh": true
+}

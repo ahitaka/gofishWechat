@@ -1,0 +1,22 @@
+<view class="page post-detail-page" wx:if="{{post}}">
+  <view class="nav">
+    <view class="nav-title">帖子详情</view>
+  </view>
+  <view class="wrap">
+    <post-card post="{{post}}" bind:like="toggleLike" bind:follow="toggleFollow" bind:sharepost="sharePost" bind:preview="previewImage" bind:spot="openSpot"></post-card>
+    <view class="comments card">
+      <view class="section-title">评论</view>
+      <view class="comment-form">
+        <input value="{{commentText}}" placeholder="写下你的评论" bindinput="onCommentInput" />
+        <button loading="{{submittingComment}}" bindtap="submitComment">发送</button>
+      </view>
+      <view class="comment" wx:for="{{comments}}" wx:key="id">
+        <view class="name">{{item.author ? item.author.nickname : '钓友'}}</view>
+        <view class="text">{{item.content}}</view>
+      </view>
+      <empty-state wx:if="{{!comments.length}}" text="暂无评论"></empty-state>
+    </view>
+  </view>
+  <bottom-nav></bottom-nav>
+  <fish-loading></fish-loading>
+</view>

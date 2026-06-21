@@ -1,0 +1,16 @@
+.tag {
+  border-radius: 10rpx;
+  display: inline-flex;
+  font-size: 22rpx;
+  padding: 6rpx 12rpx;
+}
+
+.private {
+  background: #EAF2FF;
+  color: #2F80ED;
+}
+
+.public {
+  background: #EAF8F0;
+  color: #21B56B;
+}
