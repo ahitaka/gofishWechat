@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "user-avatar": "/components/user-avatar/index"
+    "user-avatar": "/components/user-avatar/index",
+    "cached-image": "/components/cached-image/index"
   }
 }

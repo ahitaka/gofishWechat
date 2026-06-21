@@ -3,7 +3,7 @@
     <view class="nav-title">我的</view>
   </view>
   <view class="banner">
-    <image wx:if="{{userInfo.coverUrl}}" src="{{userInfo.coverUrl}}" mode="aspectFill"></image>
+    <cached-image wx:if="{{userInfo.coverUrl}}" class="banner-img" src="{{userInfo.coverUrl}}" mode="aspectFill"></cached-image>
   </view>
   <view class="profile-card card">
     <user-avatar src="{{userInfo.avatarUrl}}"></user-avatar>
