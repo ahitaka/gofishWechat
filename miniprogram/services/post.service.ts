@@ -159,15 +159,8 @@ export async function getUserPosts(userId: string, page = 1): Promise<CommunityP
 }
 
 export async function getPostById(id?: string): Promise<CommunityPost | undefined> {
-  if (!id) {
-    return undefined;
-  }
-  try {
-    return toPost(await request<PostApiItem>(`/posts/${id}`));
-  } catch (_error) {
-    const post = mockPosts.find((post) => post.id === id);
-    return post ? { ...post, createdAtText: formatTime(post.createdAt) } : undefined;
-  }
+  if (!id) return undefined;
+  return toPost(await request<PostApiItem>(`/posts/${id}`));
 }
 
 export function createPost(form: Record<string, unknown>): Promise<CommunityPost> {
