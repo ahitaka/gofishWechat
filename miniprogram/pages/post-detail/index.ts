@@ -37,16 +37,11 @@ Page({
   },
   async toggleLike() {
     const post = this.data.post;
-    if (!post) {
-      return;
-    }
-    try {
-      await likePost(post.id, post.liked);
-    } catch (_error) {
-      wx.showToast({ title: "操作失败", icon: "none" });
-      return;
-    }
+    if (!post) return;
+    // 乐观更新：立即响应 UI
     const liked = !post.liked;
+    const prevLiked = post.liked;
+    const prevLikeCount = post.likeCount;
     this.setData({
       post: {
         ...post,
@@ -54,6 +49,19 @@ Page({
         likeCount: post.likeCount + (liked ? 1 : -1),
       },
     });
+    // 后台发请求，失败则回滚
+    try {
+      await likePost(post.id, prevLiked);
+    } catch (_error) {
+      this.setData({
+        post: {
+          ...this.data.post!,
+          liked: prevLiked,
+          likeCount: prevLikeCount,
+        },
+      });
+      wx.showToast({ title: "操作失败", icon: "none" });
+    }
   },
   async toggleFollow() {
     const post = this.data.post;

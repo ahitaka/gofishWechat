@@ -79,24 +79,30 @@ Page({
   },
   async toggleLike(event: CustomEvent<{ post: CommunityPost }>) {
     const target = event.detail.post;
-    try {
-      await likePost(target.id, target.liked);
-    } catch (_error) {
-      wx.showToast({ title: "操作失败", icon: "none" });
-      return;
-    }
-    const posts = this.data.posts.map((post) => {
-      if (post.id !== target.id) {
-        return post;
-      }
-      const liked = !post.liked;
-      return {
-        ...post,
-        liked,
-        likeCount: post.likeCount + (liked ? 1 : -1),
-      };
+    // 乐观更新：立即响应 UI
+    const liked = !target.liked;
+    const prevLiked = target.liked;
+    const prevLikeCount = target.likeCount;
+    this.setData({
+      posts: this.data.posts.map((post) =>
+        post.id === target.id
+          ? { ...post, liked, likeCount: post.likeCount + (liked ? 1 : -1) }
+          : post
+      ),
     });
-    this.setData({ posts });
+    // 后台发请求，失败则回滚
+    try {
+      await likePost(target.id, prevLiked);
+    } catch (_error) {
+      this.setData({
+        posts: this.data.posts.map((post) =>
+          post.id === target.id
+            ? { ...post, liked: prevLiked, likeCount: prevLikeCount }
+            : post
+        ),
+      });
+      wx.showToast({ title: "操作失败", icon: "none" });
+    }
   },
   async toggleFollow(event: CustomEvent<{ post: CommunityPost }>) {
     const target = event.detail.post;
