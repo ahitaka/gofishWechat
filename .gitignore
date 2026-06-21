@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# macOS
+.DS_Store
+
+# WeChat Mini Program private config (contains appid, etc.)
+project.private.config.json
+
+# WorkBuddy local memory
+.workbuddy/memory/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.idea/
+.vscode/
+
+# Build output
+miniprogram_npm/
