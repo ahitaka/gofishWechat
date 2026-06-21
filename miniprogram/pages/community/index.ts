@@ -28,14 +28,12 @@ Page({
     if (tabBar) {
       tabBar.setData({ selected: "pages/community/index" });
     }
-    if (wx.getStorageSync("communityNeedRefresh")) {
-      wx.removeStorageSync("communityNeedRefresh");
-      this.setData({ activeTab: "latest", page: 1 }, () => this.loadPosts());
-    }
     const spotFilter = wx.getStorageSync("communitySpotFilter");
     if (spotFilter?.spotId) {
       wx.removeStorageSync("communitySpotFilter");
       this.setData({ activeTab: "latest", page: 1, spotFilter }, () => this.loadPosts());
+    } else {
+      this.setData({ page: 1 }, () => this.loadPosts());
     }
   },
   onPullDownRefresh() {

@@ -105,10 +105,7 @@ Page({
     if (tabBar) {
       tabBar.setData({ selected: "pages/spots/index" });
     }
-    if (wx.getStorageSync("spotsNeedRefresh")) {
-      wx.removeStorageSync("spotsNeedRefresh");
-      this.refreshSpots();
-    }
+    this.refreshSpots();
   },
   onPullDownRefresh() {
     this.refreshSpots().finally(() => wx.stopPullDownRefresh());
