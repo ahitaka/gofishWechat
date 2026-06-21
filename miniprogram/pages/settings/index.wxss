@@ -22,6 +22,12 @@
   justify-content: flex-start;
   min-height: 132rpx;
   padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.avatar-picker::after {
+  border: none;
 }
 
 .cover-picker {
