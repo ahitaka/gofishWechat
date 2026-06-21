@@ -6,57 +6,80 @@
   margin: 0 -32rpx;
 }
 
-.form-card {
-  padding: 0 28rpx;
-}
-
-.avatar-picker {
+/* 头像卡片 */
+.avatar-card {
   align-items: center;
-  background: #FFFFFF;
-  border-bottom: 1rpx solid #EEEEEE;
-  border-radius: 0;
-  color: #222222;
   display: flex;
-  font-size: 30rpx;
-  gap: 22rpx;
-  justify-content: flex-start;
-  min-height: 132rpx;
-  padding: 0;
-  text-align: left;
-  width: 100%;
+  flex-direction: column;
+  padding: 48rpx 32rpx 36rpx;
 }
 
-.avatar-picker::after {
+.avatar-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+}
+
+.avatar-btn::after {
   border: none;
 }
 
-.cover-picker {
+.avatar-hint {
+  color: #21B56B;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+}
+
+/* 信息卡片 */
+.info-card {
+  margin-top: 24rpx;
+  padding: 0 28rpx;
+}
+
+.row {
   align-items: center;
-  border-bottom: 1rpx solid #EEEEEE;
-  color: #222222;
   display: flex;
-  font-size: 30rpx;
-  min-height: 108rpx;
+  min-height: 100rpx;
 }
 
-.field {
-  align-items: center;
-  display: flex;
-  gap: 24rpx;
-  min-height: 108rpx;
-}
-
-.field text {
+.label {
   color: #222222;
   font-size: 30rpx;
-  width: 96rpx;
+  width: 140rpx;
 }
 
-.field input {
+.input {
+  color: #333333;
   flex: 1;
   font-size: 30rpx;
+  text-align: right;
+}
+
+.divider {
+  background: #EEEEEE;
+  height: 1rpx;
+}
+
+.row-right {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  gap: 12rpx;
+  justify-content: flex-end;
+}
+
+.value {
+  color: #999999;
+  font-size: 28rpx;
+}
+
+.arrow {
+  color: #CCCCCC;
+  font-size: 36rpx;
+  line-height: 1;
 }
 
 .save-btn {
-  margin-top: 32rpx;
+  margin-top: 48rpx;
 }
