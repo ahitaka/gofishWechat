@@ -1,6 +1,5 @@
 <view class="page history-page">
   <view class="nav">
-    <view class="back" bindtap="goBack">‹</view>
     <view class="nav-title">浏览历史</view>
     <view wx:if="{{history.length}}" class="nav-action" bindtap="clearAll">清空</view>
   </view>

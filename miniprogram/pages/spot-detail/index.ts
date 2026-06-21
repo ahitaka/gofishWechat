@@ -119,13 +119,6 @@ Page({
       wx.showToast({ title: "操作失败", icon: "none" });
     }
   },
-  goBack() {
-    if (getCurrentPages().length > 1) {
-      wx.navigateBack();
-      return;
-    }
-    wx.switchTab({ url: TAB_SPOTS });
-  },
   editSpot() {
     const spot = this.data.spot;
     if (spot) {

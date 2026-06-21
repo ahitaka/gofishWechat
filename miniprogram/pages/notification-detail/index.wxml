@@ -1,6 +1,5 @@
 <view class="page notif-page">
   <view class="nav">
-    <view class="back" bindtap="goBack">‹</view>
     <view class="nav-title">{{title}}</view>
   </view>
   <view class="notif-list">

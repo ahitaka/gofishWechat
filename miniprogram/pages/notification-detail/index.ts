@@ -90,7 +90,4 @@ Page({
       wx.navigateTo({ url: toPostDetail(item.bizId) });
     }
   },
-  goBack() {
-    wx.navigateBack();
-  },
 });
